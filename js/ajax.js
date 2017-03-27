@@ -12,13 +12,20 @@ $(document).ready(function() {
   function displayList(data) {
     let musicHTML = '<div class=".app-container">'
     $.each(data.items, function(i, items){
-      console.log(i);
       musicHTML += '<div class="album">';
       // why does items.artist[i].name not work?
-      musicHTML += '<h1>' + items.artists + '</h1>';
-      musicHTML += '<p>' + items.name + ': ' + items.type + ': ' + items.external_urls.spotify +'</p>';
-      musicHTML += '<p>' + items.available_markets + '</p>';
-      musicHTML += '<img src="' + items.images + '">';
+      for (let j = 0; j < items.artists.length; j++) {
+        musicHTML += '<h1>' + items.artists[0].name + '</h1>';
+        break;
+      }
+      musicHTML += '<p>' + items.type.toUpperCase() + ': </p>';
+      musicHTML += '<p><a href="' + items.external_urls.spotify + '" target="_blank">' + items.name + '</a></p>';
+      for (let k = 0; k < items.images.length; k++) {
+        musicHTML += '<a href="' + items.images[0].url + '" data-lightbox="images" data-title="' + items.name + ': ' +  items.type.toUpperCase() + '">';
+        musicHTML += '<img src="' + items.images[0]['url'] + '">';
+        musicHTML += '</a>';
+        break;
+      }
       musicHTML += '</div>'
     });
     musicHTML += '</div>';
@@ -27,4 +34,11 @@ $(document).ready(function() {
 
   $.getJSON(spotifyAPIfrankOcean, displayList);
 
+  lightbox.option({
+        'alwaysShowNavOnTouchDevices': true,
+        'resizeDuration': 200,
+        'fitImagesInViewport': true,
+        'wrapAround': true,
+        'disableScrolling': true
+      });
 });

@@ -4,7 +4,7 @@
 html,
 body {
   height: 100vh;
-  background: #000;
+  background: #121212;
   color: #fff; }
 
 header,
@@ -14,20 +14,58 @@ main {
   text-align: center;
   padding: 20px 0; }
 
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  z-index: 400;
+  font-size: 2em;
+  line-height: 0;
+  font-family: 'Fascinate Inline', cursive; }
+
 .api-container {
-  width: 100%; }
+  width: 100%;
+  margin: 100px auto;
+  line-height: .5; }
   .api-container .album {
-    width: 29.333%;
-    float: right;
-    margin: 10px 2%;
-    height: 300px;
-    padding: 20px;
-    background-color: #2ebd59;
-    overflow: wrap; }
+    padding-top: 2%;
+    margin: 2%;
+    background-color: rgba(255, 255, 255, 0.18);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom: 10px solid #1db854;
+    transition: transform .1s ease-in; }
+    .api-container .album a {
+      color: #1db854;
+      text-decoration: none; }
+    .api-container .album a:hover {
+      text-decoration: underline; }
+    .api-container .album h1 {
+      font-family: 'Dosis', sans-serif; }
+  .api-container .album:hover {
+    transform: scale(1.03); }
+  .api-container .album img {
+    width: 100%;
+    height: 100%; }
 
 .api-container:after {
   content: "";
   display: table;
   clear: both; }
+
+@media screen and (min-width: 768px) {
+  .api-container {
+    max-width: 900px; }
+    .api-container .album {
+      display: inline-block;
+      width: 400px;
+      height: 400px; }
+      .api-container .album img {
+        width: 200px;
+        height: 200px; } }
 
 /*# sourceMappingURL=style.css.map */
