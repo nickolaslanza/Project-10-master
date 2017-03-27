@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100vh;
+  background: #000;
+  color: #fff; }
+
+header,
+main {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0; }
+
+.api-container {
+  width: 100%; }
+  .api-container .album {
+    width: 29.333%;
+    float: right;
+    margin: 10px 2%;
+    height: 300px;
+    padding: 20px;
+    background-color: #2ebd59;
+    overflow: wrap; }
+
+.api-container:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*# sourceMappingURL=style.css.map */

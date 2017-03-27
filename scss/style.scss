@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+header,
+main {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.api-container {
+  width: 100%;
+  .album {
+    width: 29.333%;
+    float: right;
+    margin: 10px 2%;
+    height: 300px;
+    padding: 20px;
+    background-color: rgb(46,189,89);
+    overflow: wrap;
+  }
+}
+
+
+.api-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
